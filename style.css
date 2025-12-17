@@ -109,8 +109,14 @@ nav ul li a:hover {
     border-radius: 8px;
     text-align: center;
     transition: transform 0.3s, background-color 0.3s;
-    cursor: pointer;
+    position: relative;
+    min-height: 100px; /* Фиксируем минимальную высоту */
+    height: 100%; /* Занимаем всю доступную высоту */
+    display: flex; /* Добавляем для центрирования содержимого */
+    align-items: center;
+    justify-content: center;
 }
+
 
 .link-card:hover {
     transform: translateY(-5px);
@@ -121,7 +127,21 @@ nav ul li a:hover {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
-    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    padding: 25px; /* Соответствует padding карточки */
+}
+.link-card .card-content {
+    position: relative;
+    z-index: 3;
+    pointer-events: none; /* Пропускает клики */
 }
 
 /* блок  альбомов */
