@@ -32,4 +32,6 @@ document.getElementById('scrollToTop').addEventListener('click', function() {
         top: 0,
         behavior: 'smooth'
     });
+
 });
+src="https://telegram.org/js/telegram-web-app.js">
