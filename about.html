@@ -16,7 +16,8 @@
             <nav class="site-nav">
                 <ul>
                     <li><a href="index.html" data-page="index">Главная</a></li>
-                    <li><a href="music.html" data-page="music">Музыка</a></li>
+                    <li><a href="mzlff/index.html" data-page="music">MZLFF</a></li>
+                    <li><a href="ilyukha-rep/index.html" data-page="ilyukha-rep">Илюха реп</a></li>
                     <li><a href="gallery.html" data-page="gallery">Галерея</a></li>
                     <li><a href="bio.html" data-page="bio">Биография</a></li>
                     <li><a href="links.html" data-page="links">Ссылки</a></li>
@@ -35,18 +36,14 @@
                     <p>Сайт является неофициальным фан-сайтом, посвящённым исполнителю MZLFF (Илья). Создан в рамках курсовой работы и не монетизируется. Вся информация взята из открытых источников и не является публичной офертой.</p>
 
                     <h3>Структура проекта</h3>
-                    <p>Сайт разделён на несколько страниц: главная, музыка, галерея, биография, ссылки и эта страница. Файлы организованы в папки <code>css/</code>, <code>js/</code>, <code>assets/</code> и <code>data/</code>.</p>
+                    <p>Каждый артист в своей папке: <code>mzlff/</code> и <code>ilyukha-rep/</code> — страница, <code>data/</code>, <code>js/</code>. У MZLFF ещё <code>assets/</code> с фото и обложками.</p>
 
                     <h3>Музыка и релизы</h3>
-                    <p>Карточки альбомов и синглов подтягиваются с API Яндекс Музыки скриптом <code>scripts/update_releases.py</code>.</p>
-                    <p><strong>Важно:</strong> серверы GitHub находятся за рубежом — Яндекс их блокирует (ошибка 451). Поэтому автообновление делается <strong>с твоего компьютера</strong> (из России API работает).</p>
+                    <p>Данные подтягиваются с API Яндекс Музыки скриптом <code>scripts/update_releases.py</code> — отдельно для каждого артиста. Обновление с компьютера (Яндекс блокирует серверы GitHub).</p>
 
-                    <h3>Как обновить релизы (10 секунд)</h3>
-                    <p>В PowerShell из папки проекта:</p>
-                    <p><code>.\scripts\update-and-push.ps1</code></p>
-                    <p>Скрипт сам скачает релизы и отправит на GitHub. Сайт обновится без ручного JSON и без платного хостинга.</p>
-
-                    <p>Блок «Популярные треки» — виджет Яндекс Музыки. Хостинг — бесплатный GitHub Pages.</p>
+                    <h3>Как обновить релизы</h3>
+                    <p><code>.\scripts\update-and-push-mzlff.ps1</code> — MZLFF</p>
+                    <p><code>.\scripts\update-and-push-ilyukha-rep.ps1</code> — Илюха реп</p>
 
                     <p>Спасибо за поддержку!</p>
                 </div>
@@ -58,7 +55,8 @@
         <div class="container">
             <nav class="footer-nav">
                 <a href="index.html">Главная</a>
-                <a href="music.html">Музыка</a>
+                <a href="mzlff/index.html">MZLFF</a>
+                <a href="ilyukha-rep/index.html">Илюха реп</a>
                 <a href="gallery.html">Галерея</a>
                 <a href="bio.html">Биография</a>
                 <a href="about.html">О сайте</a>

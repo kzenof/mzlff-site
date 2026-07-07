@@ -62,41 +62,54 @@
         });
     }
 
-    const containers = document.querySelectorAll('[data-releases]');
-    if (!containers.length) return;
+    function applyData(data) {
+        const containers = document.querySelectorAll('[data-releases]');
+        if (!containers.length || !data || !data.releases) return;
 
-    fetch('data/releases.json')
+        const sorted = data.releases.slice().sort(function (a, b) {
+            return b.year - a.year;
+        });
+
+        containers.forEach(function (container) {
+            const mode = container.dataset.releases;
+            let list = sorted;
+
+            if (mode === 'recent') {
+                list = sorted.slice(0, 6);
+            } else if (mode === 'all') {
+                list = sorted;
+            } else if (mode === 'albums') {
+                list = sorted.filter(function (r) {
+                    return r.type === 'album' || r.type === 'ep';
+                });
+            } else if (mode === 'singles') {
+                list = sorted.filter(function (r) {
+                    return r.type === 'single';
+                });
+            }
+
+            renderReleases(container, list);
+        });
+    }
+
+    function showError() {
+        const slug = document.body.dataset.artist || 'mzlff';
+        document.querySelectorAll('[data-releases]').forEach(function (container) {
+            container.innerHTML = '<p class="releases-error">Не удалось загрузить релизы. Запусти update-and-push-' + slug + '.ps1</p>';
+        });
+    }
+
+    if (window.RELEASES_DATA) {
+        applyData(window.RELEASES_DATA);
+        return;
+    }
+
+    const slug = document.body.dataset.artist || 'mzlff';
+    fetch(new URL('data/releases.json', window.location.href))
         .then(function (response) {
-            if (!response.ok) throw new Error('Не удалось загрузить релизы');
+            if (!response.ok) throw new Error('fetch failed');
             return response.json();
         })
-        .then(function (data) {
-            const sorted = data.releases.slice().sort(function (a, b) {
-                return b.year - a.year;
-            });
-
-            containers.forEach(function (container) {
-                const mode = container.dataset.releases;
-                let list = sorted;
-
-                if (mode === 'recent') {
-                    list = sorted.slice(0, 6);
-                } else if (mode === 'albums') {
-                    list = sorted.filter(function (r) {
-                        return r.type === 'album' || r.type === 'ep';
-                    });
-                } else if (mode === 'singles') {
-                    list = sorted.filter(function (r) {
-                        return r.type === 'single';
-                    });
-                }
-
-                renderReleases(container, list);
-            });
-        })
-        .catch(function () {
-            containers.forEach(function (container) {
-                container.innerHTML = '<p class="releases-error">Не удалось загрузить релизы.</p>';
-            });
-        });
+        .then(applyData)
+        .catch(showError);
 })();

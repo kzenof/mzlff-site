@@ -1,8 +1,11 @@
 {
   "source": "yandex-music",
+  "slug": "mzlff",
   "artistId": "6236891",
+  "displayName": "MZLFF",
+  "yandexUrl": "https://music.yandex.ru/artist/6236891",
   "updatedAutomatically": true,
-  "updatedAt": "2026-07-07T11:40:29Z",
+  "updatedAt": "2026-07-07T11:51:23Z",
   "releases": [
     {
       "title": "потерянный мир",

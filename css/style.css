@@ -496,6 +496,42 @@ a:hover {
     color: var(--accent-mint);
 }
 
+.alter-ego-banner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 32px;
+    background: rgba(110, 181, 217, 0.1);
+    border: 1px solid var(--border-soft);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: var(--radius);
+    color: var(--text-soft);
+}
+
+.alter-ego-label {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: rgba(78, 205, 196, 0.15);
+    color: var(--accent-mint);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.alter-ego-banner p {
+    margin-bottom: 12px;
+}
+
+.alter-ego-banner p:last-child {
+    margin-bottom: 0;
+}
+
+.alter-ego-banner strong {
+    color: var(--accent-teal);
+}
+
 /* Links */
 .links-grid {
     display: grid;

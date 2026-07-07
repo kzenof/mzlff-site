@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Музыка MZLFF — альбомы, синглы и релизы">
-    <title>Музыка — MZLFF</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>MZLFF — музыка</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body data-page="music">
+<body data-page="music" data-artist="mzlff">
 
     <header class="site-header">
         <div class="container header-inner">
-            <a href="index.html" class="logo">MZLFF</a>
+            <a href="../index.html" class="logo">MZLFF</a>
             <button class="nav-toggle" aria-label="Открыть меню"><span></span></button>
             <nav class="site-nav">
                 <ul>
-                    <li><a href="index.html" data-page="index">Главная</a></li>
-                    <li><a href="music.html" data-page="music">Музыка</a></li>
-                    <li><a href="gallery.html" data-page="gallery">Галерея</a></li>
-                    <li><a href="bio.html" data-page="bio">Биография</a></li>
-                    <li><a href="links.html" data-page="links">Ссылки</a></li>
-                    <li><a href="about.html" data-page="about">О сайте</a></li>
+                    <li><a href="../index.html" data-page="index">Главная</a></li>
+                    <li><a href="index.html" data-page="music">MZLFF</a></li>
+                    <li><a href="../ilyukha-rep/index.html" data-page="ilyukha-rep">Илюха реп</a></li>
+                    <li><a href="../gallery.html" data-page="gallery">Галерея</a></li>
+                    <li><a href="../bio.html" data-page="bio">Биография</a></li>
+                    <li><a href="../links.html" data-page="links">Ссылки</a></li>
+                    <li><a href="../about.html" data-page="about">О сайте</a></li>
                 </ul>
             </nav>
         </div>
@@ -30,7 +31,7 @@
 
         <section class="section-block">
             <div class="container">
-                <h1 class="section-title">Музыка</h1>
+                <h1 class="section-title">MZLFF</h1>
                 <p class="section-subtitle">Популярные треки</p>
 
                 <div class="yandex-widget yandex-widget--compact">
@@ -61,8 +62,7 @@
                 <div class="releases-grid" data-releases="singles"></div>
 
                 <div class="releases-note">
-                    <strong>Обновление релизов:</strong> один раз запусти <code>.\scripts\update-and-push.ps1</code> —
-                    скрипт сам подтянет данные с Яндекс Музыки и отправит на GitHub. JSON вручную не нужен.
+                    <strong>Обновление:</strong> запусти <code>.\scripts\update-and-push-mzlff.ps1</code>
                 </div>
             </div>
         </section>
@@ -72,11 +72,12 @@
     <footer class="site-footer">
         <div class="container">
             <nav class="footer-nav">
-                <a href="index.html">Главная</a>
-                <a href="music.html">Музыка</a>
-                <a href="gallery.html">Галерея</a>
-                <a href="bio.html">Биография</a>
-                <a href="about.html">О сайте</a>
+                <a href="../index.html">Главная</a>
+                <a href="index.html">MZLFF</a>
+                <a href="../ilyukha-rep/index.html">Илюха реп</a>
+                <a href="../gallery.html">Галерея</a>
+                <a href="../bio.html">Биография</a>
+                <a href="../about.html">О сайте</a>
             </nav>
             <p>Сайт является фан-сайтом и не монетизируется.</p>
         </div>
@@ -84,7 +85,8 @@
 
     <button id="scrollToTop" class="scroll-top-btn" aria-label="Наверх">↑</button>
 
-    <script src="js/main.js"></script>
-    <script src="js/releases.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="js/releases-data.js"></script>
+    <script src="../js/releases.js"></script>
 </body>
 </html>

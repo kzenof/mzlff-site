@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Илюха реп - альтер-эго Ильи (MZLFF). Музыка на Яндекс Музыке">
+    <title>Илюха реп — MZLFF</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body data-page="ilyukha-rep" data-artist="ilyukha-rep">
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="../index.html" class="logo">MZLFF</a>
+            <button class="nav-toggle" aria-label="Открыть меню"><span></span></button>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="../index.html" data-page="index">Главная</a></li>
+                    <li><a href="../mzlff/index.html" data-page="music">MZLFF</a></li>
+                    <li><a href="index.html" data-page="ilyukha-rep">Илюха реп</a></li>
+                    <li><a href="../gallery.html" data-page="gallery">Галерея</a></li>
+                    <li><a href="../bio.html" data-page="bio">Биография</a></li>
+                    <li><a href="../links.html" data-page="links">Ссылки</a></li>
+                    <li><a href="../about.html" data-page="about">О сайте</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-main">
+
+        <section class="section-block">
+            <div class="container">
+                <h1 class="section-title">Илюха реп</h1>
+
+                <div class="alter-ego-banner">
+                    <p class="alter-ego-label">Альтер-эго</p>
+                    <p><strong>Илюха реп</strong> — отдельный музыкальный проект <strong>Ильи</strong> (mzlff). Другая подача и звучание, но тот же автор.</p>
+                    <p>На этой странице — только релизы Илюхи репа, отдельно от основного творчества MZLFF.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block alt-bg">
+            <div class="container">
+                <h2 class="section-title">Популярные треки</h2>
+                <div class="yandex-widget yandex-widget--compact">
+                    <iframe
+                        src="https://music.yandex.ru/iframe/#artist/25098870"
+                        title="Илюха реп на Яндекс Музыке"
+                        allow="autoplay; encrypted-media">
+                    </iframe>
+                </div>
+                <p class="text-center">
+                    <a href="https://music.yandex.ru/artist/25098870" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Открыть в Яндекс Музыке</a>
+                    <a href="../mzlff/index.html" class="btn btn-secondary">MZLFF</a>
+                </p>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="container">
+                <h2 class="section-title">Релизы</h2>
+                <p class="section-subtitle">От новых к старым</p>
+                <div class="releases-grid" data-releases="all"></div>
+
+                <div class="releases-note">
+                    <strong>Обновление:</strong> запусти <code>.\scripts\update-and-push-ilyukha-rep.ps1</code>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-nav">
+                <a href="../index.html">Главная</a>
+                <a href="../mzlff/index.html">MZLFF</a>
+                <a href="index.html">Илюха реп</a>
+                <a href="../gallery.html">Галерея</a>
+                <a href="../bio.html">Биография</a>
+                <a href="../about.html">О сайте</a>
+            </nav>
+            <p>Сайт является фан-сайтом и не монетизируется.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-top-btn" aria-label="Наверх">↑</button>
+
+    <script src="../js/main.js"></script>
+    <script src="js/releases-data.js"></script>
+    <script src="../js/releases.js"></script>
+</body>
+</html>

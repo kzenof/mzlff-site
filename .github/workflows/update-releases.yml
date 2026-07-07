@@ -2,7 +2,7 @@ name: Update releases (self-hosted)
 
 # Яндекс Музыка блокирует серверы GitHub (HTTP 451).
 # Этот workflow работает только на твоём ПК через self-hosted runner.
-# Проще: запускай scripts/update-and-push.ps1 вручную.
+# Prosche: zapuskaj scripts/update-and-push-mzlff.ps1 ili update-and-push-ilyukha-rep.ps1 vruchnuyu.
 
 on:
   schedule:
@@ -20,16 +20,18 @@ jobs:
 
       - name: Fetch releases
         shell: pwsh
-        run: python scripts/update_releases.py
+        run: |
+          python scripts/update_releases.py mzlff
+          python scripts/update_releases.py ilyukha-rep
 
       - name: Commit and push if changed
         shell: pwsh
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/releases.json
+          git add mzlff/data mzlff/js ilyukha-rep/data ilyukha-rep/js
           if (git diff --staged --quiet) {
-            Write-Host "No changes in releases.json"
+            Write-Host "No changes in releases"
           } else {
             git commit -m "chore: auto-update releases from Yandex Music"
             git push
