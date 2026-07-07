@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Музыка MZLFF — альбомы, синглы и релизы">
+    <title>Музыка — MZLFF</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="music">
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">MZLFF</a>
+            <button class="nav-toggle" aria-label="Открыть меню"><span></span></button>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="index.html" data-page="index">Главная</a></li>
+                    <li><a href="music.html" data-page="music">Музыка</a></li>
+                    <li><a href="gallery.html" data-page="gallery">Галерея</a></li>
+                    <li><a href="bio.html" data-page="bio">Биография</a></li>
+                    <li><a href="links.html" data-page="links">Ссылки</a></li>
+                    <li><a href="about.html" data-page="about">О сайте</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page-main">
+
+        <section class="section-block">
+            <div class="container">
+                <h1 class="section-title">Музыка</h1>
+                <p class="section-subtitle">Альбомы, EP и синглы mzlff — от «Космоцветка» до «потерянного мира»</p>
+
+                <div class="yandex-widget">
+                    <iframe
+                        src="https://music.yandex.ru/iframe/#artist/6236891"
+                        title="MZLFF на Яндекс Музыке"
+                        allow="autoplay; encrypted-media">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block alt-bg">
+            <div class="container">
+                <h2 class="section-title">Альбомы и EP</h2>
+                <div class="releases-grid" data-releases="albums"></div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="container">
+                <h2 class="section-title">Синглы</h2>
+                <div class="releases-grid" data-releases="singles"></div>
+
+                <div class="releases-note">
+                    <strong>Как обновлять релизы:</strong> все карточки берутся из одного файла <code>data/releases.json</code>.
+                    Когда выходит новый трек — добавь одну запись в JSON (название, год, тип, ссылку, обложку).
+                    HTML менять не нужно. Подробнее — на странице <a href="about.html">О сайте</a>.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-nav">
+                <a href="index.html">Главная</a>
+                <a href="music.html">Музыка</a>
+                <a href="gallery.html">Галерея</a>
+                <a href="bio.html">Биография</a>
+                <a href="about.html">О сайте</a>
+            </nav>
+            <p>Сайт является фан-сайтом и не монетизируется.</p>
+        </div>
+    </footer>
+
+    <button id="scrollToTop" class="scroll-top-btn" aria-label="Наверх">↑</button>
+
+    <script src="js/main.js"></script>
+    <script src="js/releases.js"></script>
+</body>
+</html>

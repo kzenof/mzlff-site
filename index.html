@@ -3,308 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MZLFF - фан сайт</title>
+    <meta name="description" content="Неофициальный фан-сайт посвящённый исполнителю MZLFF (Илья)">
+    <title>MZLFF — фан-сайт</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <!-- Шапка с навигацией -->
-    <header>
-        <div class="container">
-           <nav>
-    <ul>
-        <li><a href="#main">Главная</a></li>
-        <li><a href="#links">Ссылки</a></li>
-        <li><a href="#albums">Творчество </a></li>
-        <li><a href="#gallery">Фотогалерея</a></li>
-        <li><a href="#bio">Биография</a></li>
-        <li><a href="#info">О сайте</a></li>
-    </ul>
+<body data-page="index">
 
-</nav>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="index.html" class="logo">MZLFF</a>
+            <button class="nav-toggle" aria-label="Открыть меню"><span></span></button>
+            <nav class="site-nav">
+                <ul>
+                    <li><a href="index.html" data-page="index">Главная</a></li>
+                    <li><a href="music.html" data-page="music">Музыка</a></li>
+                    <li><a href="gallery.html" data-page="gallery">Галерея</a></li>
+                    <li><a href="bio.html" data-page="bio">Биография</a></li>
+                    <li><a href="links.html" data-page="links">Ссылки</a></li>
+                    <li><a href="about.html" data-page="about">О сайте</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Главная -->
-    <section id="main" class="hero">
-        <div class="container">
-            <div class="hero-image">
-                <img src="assets/hero/mzlff.jpg" alt="MZLFF (Илья)">
-            </div>
-            <div class="hero-info">
-                <h1>MZLFF</h1>
-                <p>Добро пожаловать на неофициальный сайт посвящённый исполнителю MZLFF.  </p>
-                <p> На сайте вы можете найти все нужные ссыли на исполнителя.</p>
-            </div>
-        </div>
-    </section>
+    <main class="page-main">
 
-  <!-- Блок с ссылками -->
-<section id="links" class="links-section">
-    <div class="container">
-         <h2 class="section-title">Ссылки</h2>  
-            <div class="links-grid">
-            <div class="link-card">
-                <a href="https://vsrap.shop/brands/mzlff/" target="_blank">Мерч</a>
-            </div>
-            <div class="link-card">
-                <a href="https://music.yandex.ru/artist/6236891" target="_blank">яндекс музыка </a>
-            </div>
-            <div class="link-card">
-                <a href="https://t.me/mazellovvv" target="_blank">Телеграмм канал</a>
-            </div>
-            <div class="link-card">
-                <a href="https://vk.com/mzlff?from=search" target="_blank">Группа ВК</a>
-            </div>
-            <div class="link-card">
-                <a href="https://vk.com/mazilaweek" target="_blank">ВК страница</a>
-            </div>
-            <div class="link-card">
-                <a href="https://mzlff.tours/" target="_blank">Тур</a>
-        </div>
-            <div class="link-card">
-                <a href="https://www.twitch.tv/mazellovvv" target="_blank">Твич</a>
+        <section class="hero-section">
+            <div class="container hero-grid">
+                <div class="hero-carousel" aria-label="Фотографии MZLFF">
+                    <div class="carousel-slide active">
+                        <img src="assets/hero/mzlff.jpg" alt="MZLFF (Илья)">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/hero/mzlff-tour.png" alt="MZLFF на туре 2023">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/hero/mzlff-purple.png" alt="MZLFF — фото">
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="assets/hero/mzlff-portrait.png" alt="MZLFF — портрет">
+                    </div>
+                    <div class="carousel-dots"></div>
                 </div>
-                <div class="link-card">
-                <a href="https://www.youtube.com/@MZLFF" target="_blank">Ютуб</a>
-                </div>
-                <div class="link-card">
-                <a href="https://vk.com/artist/mzlff" target="_blank">ВК музыка</a>
-                </div>
-                 <div class="link-card">
-                <a href="https://t.me/tribute/app?startapp=s4Pl" target="_blank">Приватный тг канал</a>
-                </div>
-</section>
 
-    <!-- блок альбомов -->
-    <section id="albums" class="albums-section">
-        <div class="container">
-            <h2 class="section-title">Альбомы/EP                </h2>
-            <div class="albums-grid">
-                <!-- Альбом 1 -->
-                <div class="album-card">
-                    <img src="assets/albums/PHANTASMAGORIA.jpeg" alt="PHANTASMAGORIA">
-                    <div class="album-info">
-                        <h3>PHANTASMAGORIA</h3>
-                     <a href="https://music.thefence.me/phntsmagoria" target="_blank">слушать на всех площадках </a>
+                <div class="hero-content">
+                    <h1>MZLFF</h1>
+                    <p class="hero-lead">Добро пожаловать на неофициальный сайт, посвящённый Илье — музыканту, стримеру и человеку, для которого искренность важнее всего.</p>
+                    <div class="hero-actions">
+                        <a href="music.html" class="btn btn-primary">Слушать музыку</a>
+                        <a href="links.html" class="btn btn-secondary">Все ссылки</a>
                     </div>
-                </div>
-                
-                <!-- Альбом 2 -->
-                <div class="album-card">
-                    <img src="assets/albums/ADHD.jpg" alt="ADHD">
-                    <div class="album-info">
-                        <h3>ADHD</h3>
-                       <a href="https://music.thefence.me/mzadhdlff" target="_blank">слушать на всех площадках </a>
-                    </div>
-                </div>
-                
-                <!-- Альбом 3 -->
-                <div class="album-card">
-                    <img src="assets/albums/не забытое старое.png" alt="не забытое старое">
-                    <div class="album-info">
-                        <h3>не забытое старое</h3>
-                        <a href="https://music.thefence.me/mzlffnezs" target="_blank">слушать на всех площадках </a>
-                    </div>
-                </div>
-                
-                <!-- Альбом 4 -->
-                <div class="album-card">
-                    <img src="assets/albums/светлая сторона.png" alt="светлая сторона">
-                    <div class="album-info">
-                        <h3>светлая сторона</h3>
-                        <a href="https://music.thefence.me/svetlayastorona" target="_blank">слушать на всех площадках </a>
-                    </div>
-                </div>
-                 <!-- Альбом 5 -->
-                <div class="album-card">
-                    <img src="assets/albums/Холода ветра.jpg" alt="Холода ветра">
-                    <div class="album-info">
-                        <h3>Холода ветра</h3>
-                        <a href="https://zionmusic.store/s1fiH" target="_blank">слушать на всех площадках </a>
-                    </div>
-                </div>
-                                <!-- Альбом 6 -->
-                <div class="album-card">
-                    <img src="assets/albums/ANEMONE.jpg" alt="ANEMONE">
-                    <div class="album-info">
-                        <h3>ANEMONE</h3>
-                        <a href="https://zionmusic.store/Mq3zc" target="_blank">слушать на всех площадках </a>
-                    </div>
-                </div>
-                <!-- Альбом 7 -->
-                <div class="album-card">
-                    <img src="assets/albums/к маяку вселенной.jpg" alt="к маяку вселенной">
-                    <div class="album-info">
-                        <h3>к маяку вселенной</h3>
-                        <a href="https://band.link/mzlff" target="_blank">слушать на всех площадках </a>
-                    </div>
-                </div>
-                 <!-- Альбом 8 -->
-                <div class="album-card">
-                    <img src="assets/albums/Космоцветок.jpg" alt="Космоцветок">
-                    <div class="album-info">
-                        <h3>Космоцветок </h3>
-                         <a href="https://vk.com/artist/mzlff/releases?z=audio_playlist-2000934278_19934278_83d60bae38c3ce15bb" target="_blank" class="album-link">ВК музыка </a><br>
-                            <a href="https://music.yandex.ru/album/13012398" target="_blank" class="album-link">Яндекс Музыка</a>
-                    </div>
-                </div>
-    </section>
-    <!-- блок синглов -->
-    <section id="singles" class="albums-section">
-        <div class="container">
-            <h2 class="section-title">Синглы</h2>
-            <div class="albums-grid">
-                <!-- Сингл 1 -->
-                <div class="album-card">
-                    <img src="assets/singles/пластырь.jpg" alt="пластырь">
-                    <div class="album-info">
-                        <h3>пластырь</h3>
-                        <h5>ft.N.MASTEROFF</h5>
-                        <a href="https://music.thefence.me/nmzlffplastyr" target="_blank">слушать на всех площадках </a>
-                    </div>
-                </div>
-                
-                <!-- Сингл 2 -->
-                <div class="album-card">
-                    <img src="assets/singles/невыносимо.png" alt="невыносимо">
-                    <div class="album-info">
-                        <h3>невыносимо</h3>
-                        <h5>ft.Слава КПСС</h5>
-                        <a href="https://music.thefence.me/mzlffkpssnvnsm" target="_blank">слушать на всех площадках</a>
-                    </div>
-                </div>
-                 <!-- Сингл 3 -->
-                <div class="album-card">
-                    <img src="assets/singles/я устал.png" alt="я устал">
-                    <div class="album-info">
-                        <h3>я устал </h3>
-                        <h5>ft.наше последнее лето </h5>
-                        <a href="http://music.thefence.me/nplmzlffustal" target="_blank">слушать на всех площадках</a>
-                    </div>
-                </div>
-                  <!-- Сингл 4 -->
-                <div class="album-card">
-                    <img src="assets/singles/Rolls Royce Phantom.png" alt="Rolls Royce Phantom">
-                    <div class="album-info">
-                        <h3>Rolls Royce Phantom</h3>
-                        <h5>ft.Слава КПСС, Skurt </h5>
-                        <a href="http://music.thefence.me/rollsroycephantom " target="_blank">слушать на всех площадках</a>
-                    </div>
-                </div>
-          <!-- Сингл 5 -->
-                <div class="album-card">
-                    <img src="assets/singles/чёртово колесо.jpg" alt="чёртово колесо">
-                    <div class="album-info">
-                        <h3>чёртово колесо</h3>
-                        <a href="http://music.thefence.me/chertovo_koleso " target="_blank">слушать на всех площадках</a>
-                    </div>
-                </div>
-                  <!-- Сингл 6 -->
-                <div class="album-card">
-                    <img src="assets/singles/Буря, метель и мгла.png" alt="Буря, метель и мгла">
-                    <div class="album-info">
-                        <h3>Буря, метель и мгла</h3>
-                        <h5>ft.Канги, STED.D </h5>
-                        <a href="http://music.thefence.me/BMIM" target="_blank">слушать на всех площадках</a>
-                    </div>
-                </div>
-                  <!-- Сингл 7 -->
-                <div class="album-card">
-                    <img src="assets/singles/Привет.jpg" alt="Привет">
-                    <div class="album-info">
-                        <h3>Привет</h3>
-                        <a href="http://music.thefence.me/privetmzlff" target="_blank">слушать на всех площадках</a>
-                    </div>
-                </div>
-                  <!-- Сингл 8 -->
-                <div class="album-card">
-                    <img src="assets/singles/бэйслайн бизнес.jpg" alt="бэйслайн бизнес">
-                    <div class="album-info">
-                        <h3>бэйслайн бизнес</h3>
-                        <h5>ft.CMH </h5>
-                        <a href="https://band.link/beyslaynbiznes " target="_blank">слушать на всех площадках</a>
-                    </div>
-                </div>
-    </section>
-    <!-- блок  фотогалереи -->
-    <section id="gallery" class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">Фотогалерея</h2>
-            <div class="gallery-grid">
-                <!-- Фото 1 -->
-                <div class="gallery-item">
-
-                    <img src="assets/gallery/mzlff 2.webp" alt="Фото ">
-                </div>
-                
-                <!-- Фото 2 -->
-                <div class="gallery-item">
-                    <img src="assets/gallery/mzlff 3.jpg" alt="Фото ">
-                </div>
-                
-                <!-- Фото 3 -->
-                <div class="gallery-item">
-                    <img src="assets/gallery/mzlff 4.jpg" alt="Фото ">
-                </div>
-                
-                <!-- Фото 4 -->
-                <div class="gallery-item">
-                    <img src="assets/gallery/mzlff 5.jpg" alt="Фото ">
-                </div>
-                
-                <!-- Фото 5 -->
-                <div class="gallery-item">
-                    <img src="assets/gallery/mzlff 6.jpg" alt="Фото ">
-                </div>
-                
-                <!-- Фото 6 -->
-                <div class="gallery-item">
-                    <img src="assets/gallery/mzlff 7.jpg" alt="Фото ">
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- блок  биографии -->
-    <section id="bio" class="bio-section">
-        <div class="container">
-            <h2 class="section-title">Биография</h2>
-            <div class="bio-content">
+        <section class="section-block alt-bg">
+            <div class="container">
+                <blockquote class="quote-block">
+                    <p class="quote-text">Искренность — это красиво</p>
+                    <footer class="quote-author">— <strong>Илья</strong>, <span class="quote-alias">mzlff</span></footer>
+                </blockquote>
+            </div>
+        </section>
 
-                <p>Илья́ Мазе́ллов (настоящее имя — Илья́ Ива́нович Коряко́в, род. 28 апреля 1999, Москва), также известен как mazellovvv или mzlff — российский блогер, стример, музыкант, участник рэп-баттлов.</p>
-                
-                <p>С ранних лет занимался блогерской деятельностью на платформе YouTube и желал стать ведущим прямых трансляций.</p>
-                
-                <p>С 2018 года он стал активно вести трансляции на платформе Twitch. Первую известность получил благодаря диссам на популярных стримеров. 
-                Мазеллов преимущественно проводит стримы в категории «Общение», собирая многотысячную аудиторию. 
-                Периодически транслирует игровой контент: CS:GO, Dota 2, Among Us, Fall Guys, Gartic Phone и другие.
-            В 2020 году его пригласили в сообщество Twitch-стримеров — «89 SQUAD», в котором также состоят JesusAVGN*, Bratishkinoff, T2x2, Stintik и другие</p>
-                
-                <p>На втором курсе университета познакомился с культурой рэп-баттлов и начал писать свои тексты. С 2018 по 2024 год поучаствовал в 14-ти баттлах, 9 из которых он выиграл. В баттлах использовал псевдонимы Маз Корж и MZLFF</p>
-                
-                <p>Первый EP «2018 year» артист выпустил в 2018 году совместно с Byze и Superhazepuff. В 2019 году Мазеллов выпустил свой первый полноценный альбом «Ничего плохого». 
-                    25 ноября 2022 года выпустил альбом «к маяку вселенной» и к 30 ноября занял 1-е место в суточном чарте BandLink, а в еженедельном чарте он занимал 7-е место</p>
-                
-                <p> В 2022 году mzlff дал свои первые сольные концерты в Москве и Санкт-Петербурге, а в 2023 году провёл два тура по городам России под названиями «MZLFF TOUR 2023» и «Ам Ням tour», в рамках которых он посетил 10 и 23 города России соответственно
+        <section class="section-block">
+            <div class="container">
+                <h2 class="section-title">Недавние релизы</h2>
+                <p class="section-subtitle">Карточки подгружаются из файла данных — обновлять HTML каждый раз не нужно</p>
+                <div class="releases-grid" data-releases="recent"></div>
+                <p class="text-center"><a href="music.html" class="btn btn-secondary">Вся дискография →</a></p>
+            </div>
+        </section>
+
+        <section class="section-block alt-bg">
+            <div class="container">
+                <h2 class="section-title">Яндекс Музыка</h2>
+                <p class="section-subtitle">Виджет артиста — актуальные треки прямо со страницы исполнителя</p>
+                <div class="yandex-widget">
+                    <iframe
+                        src="https://music.yandex.ru/iframe/#artist/6236891"
+                        title="MZLFF на Яндекс Музыке"
+                        allow="autoplay; encrypted-media">
+                    </iframe>
+                </div>
+                <p class="text-center" style="margin-top: 20px;">
+                    <a href="https://music.yandex.ru/artist/6236891" target="_blank" rel="noopener noreferrer">Открыть профиль на Яндекс Музыке</a>
                 </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Подвал -->
-    <footer>
-        <section id="info" class="footer">
-            <p> Сайт является фан-сайтом и исключительно информационным ресурсом. Вся информация взята из открытых источников и не является публичной офертой. Контент сайта является личным мнением авторов сайта.</p>
-           <p> Сайт был создан в целях сдачи курсовой работы, и не монетезируется.</p>
-            <p>Спасибо вам за поддержку. </p>
-            <p> * — признан иноагентом в РФ.</p>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-nav">
+                <a href="index.html">Главная</a>
+                <a href="music.html">Музыка</a>
+                <a href="gallery.html">Галерея</a>
+                <a href="bio.html">Биография</a>
+                <a href="about.html">О сайте</a>
+            </nav>
+            <p>Сайт является фан-сайтом и не монетизируется. Вся информация взята из открытых источников.</p>
+            <p>* — признан иноагентом в РФ.</p>
         </div>
     </footer>
 
-    <!-- Кнопка "вверх" -->
-    <button id="scrollToTop" class="scroll-top-btn">↑</button>
+    <button id="scrollToTop" class="scroll-top-btn" aria-label="Наверх">↑</button>
 
-    <script src="js/script.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/carousel.js"></script>
+    <script src="js/releases.js"></script>
 </body>
-
 </html>
