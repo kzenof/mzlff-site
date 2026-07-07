@@ -68,26 +68,18 @@
 
         <section class="section-block">
             <div class="container">
-                <h2 class="section-title">Недавние релизы</h2>
-                <p class="section-subtitle">Карточки подгружаются из файла данных — обновлять HTML каждый раз не нужно</p>
-                <div class="releases-grid" data-releases="recent"></div>
-                <p class="text-center"><a href="music.html" class="btn btn-secondary">Вся дискография →</a></p>
-            </div>
-        </section>
-
-        <section class="section-block alt-bg">
-            <div class="container">
-                <h2 class="section-title">Яндекс Музыка</h2>
-                <p class="section-subtitle">Виджет артиста — актуальные треки прямо со страницы исполнителя</p>
-                <div class="yandex-widget">
+                <h2 class="section-title">Музыка</h2>
+                <p class="section-subtitle">Релизы подгружаются с Яндекс Музыки — новые альбомы и синглы появляются сами</p>
+                <div class="yandex-widget yandex-widget--compact">
                     <iframe
                         src="https://music.yandex.ru/iframe/#artist/6236891"
                         title="MZLFF на Яндекс Музыке"
                         allow="autoplay; encrypted-media">
                     </iframe>
                 </div>
-                <p class="text-center" style="margin-top: 20px;">
-                    <a href="https://music.yandex.ru/artist/6236891" target="_blank" rel="noopener noreferrer">Открыть профиль на Яндекс Музыке</a>
+                <p class="text-center">
+                    <a href="music.html" class="btn btn-secondary">Вся дискография →</a>
+                    <a href="https://music.yandex.ru/artist/6236891" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Открыть в Яндекс Музыке</a>
                 </p>
             </div>
         </section>
@@ -112,6 +104,5 @@
 
     <script src="js/main.js"></script>
     <script src="js/carousel.js"></script>
-    <script src="js/releases.js"></script>
 </body>
 </html>

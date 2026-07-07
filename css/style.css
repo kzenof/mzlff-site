@@ -349,111 +349,21 @@ a:hover {
     border: none;
 }
 
-.yandex-fallback {
-    text-align: center;
-    padding: 32px;
-    background: var(--bg-card);
+.yandex-widget--compact iframe {
+    height: 360px;
 }
 
-.yandex-fallback p {
-    color: var(--text-muted);
-    margin-bottom: 16px;
-}
-
-/* Releases */
-.releases-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 24px;
-}
-
-.release-card {
-    background: var(--bg-card);
-    border-radius: var(--radius);
-    overflow: hidden;
-    border: 1px solid var(--border-soft);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.release-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px var(--accent-glow);
-}
-
-.release-cover {
-    aspect-ratio: 1;
-    overflow: hidden;
-    background: var(--bg-soft);
-}
-
-.release-cover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.release-cover-placeholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3rem;
-    font-weight: 700;
-    color: var(--accent-teal);
-    background: linear-gradient(135deg, var(--bg-soft), var(--bg-card));
-}
-
-.release-info {
-    padding: 16px;
-    text-align: center;
-}
-
-.release-info h3 {
-    font-size: 1rem;
-    margin-bottom: 4px;
-    color: var(--text-primary);
-}
-
-.release-feat {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    margin-bottom: 4px;
-}
-
-.release-meta {
-    font-size: 0.8rem;
-    color: var(--accent-blue);
-    margin-bottom: 10px;
-}
-
-.release-link {
-    display: inline-block;
-    font-size: 0.9rem;
-    font-weight: 700;
-    text-decoration: none;
-}
-
-.releases-error {
-    text-align: center;
-    color: var(--text-muted);
-    grid-column: 1 / -1;
-}
-
-.releases-note {
-    max-width: 680px;
-    margin: 32px auto 0;
-    padding: 20px 24px;
-    background: rgba(78, 205, 196, 0.08);
-    border-radius: var(--radius);
-    border-left: 4px solid var(--accent-teal);
-    color: var(--text-soft);
-    font-size: 0.95rem;
+.yandex-widget--tall iframe {
+    height: 720px;
 }
 
 .text-center {
     text-align: center;
     margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
 }
 
 /* Links */
@@ -528,8 +438,7 @@ a:hover {
     margin-bottom: 20px;
 }
 
-.prose code,
-.releases-note code {
+.prose code {
     background: rgba(78, 205, 196, 0.12);
     padding: 2px 8px;
     border-radius: 6px;
