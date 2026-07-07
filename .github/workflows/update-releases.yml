@@ -1,8 +1,12 @@
-name: Update releases from Yandex Music
+name: Update releases (self-hosted)
+
+# Яндекс Музыка блокирует серверы GitHub (HTTP 451).
+# Этот workflow работает только на твоём ПК через self-hosted runner.
+# Проще: запускай scripts/update-and-push.ps1 вручную.
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "0 9 * * *"
   workflow_dispatch:
 
 permissions:
@@ -10,30 +14,23 @@ permissions:
 
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
+      - uses: actions/checkout@v4
 
       - name: Fetch releases
-        run: |
-          python --version
-          ls -la scripts/
-          python scripts/update_releases.py
+        shell: pwsh
+        run: python scripts/update_releases.py
 
       - name: Commit and push if changed
+        shell: pwsh
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/releases.json
-          if git diff --staged --quiet; then
-            echo "No changes in releases.json"
-          else
+          if (git diff --staged --quiet) {
+            Write-Host "No changes in releases.json"
+          } else {
             git commit -m "chore: auto-update releases from Yandex Music"
             git push
-          fi
+          }

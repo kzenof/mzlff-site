@@ -6,6 +6,7 @@ import sys
 import time
 import urllib.error
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 ARTIST_ID = "6236891"
@@ -131,6 +132,7 @@ def main():
                 "source": "yandex-music",
                 "artistId": ARTIST_ID,
                 "updatedAutomatically": True,
+                "updatedAt": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
                 "releases": releases,
             },
             ensure_ascii=False,
