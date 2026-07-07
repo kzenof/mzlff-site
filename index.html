@@ -43,6 +43,11 @@
                     <div class="carousel-slide">
                         <img src="assets/hero/mzlff-portrait.png" alt="MZLFF — портрет">
                     </div>
+                    <div class="carousel-slide">
+                        <img src="assets/hero/mzlff-phantasmagoria.png" alt="MZLFF — PHANTASMAGORIA">
+                    </div>
+                    <button class="carousel-arrow carousel-arrow--prev" type="button" aria-label="Предыдущее фото">&#10094;</button>
+                    <button class="carousel-arrow carousel-arrow--next" type="button" aria-label="Следующее фото">&#10095;</button>
                     <div class="carousel-dots"></div>
                 </div>
 
@@ -68,19 +73,10 @@
 
         <section class="section-block">
             <div class="container">
-                <h2 class="section-title">Музыка</h2>
-                <p class="section-subtitle">Релизы подгружаются с Яндекс Музыки — новые альбомы и синглы появляются сами</p>
-                <div class="yandex-widget yandex-widget--compact">
-                    <iframe
-                        src="https://music.yandex.ru/iframe/#artist/6236891"
-                        title="MZLFF на Яндекс Музыке"
-                        allow="autoplay; encrypted-media">
-                    </iframe>
-                </div>
-                <p class="text-center">
-                    <a href="music.html" class="btn btn-secondary">Вся дискография →</a>
-                    <a href="https://music.yandex.ru/artist/6236891" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Открыть в Яндекс Музыке</a>
-                </p>
+                <h2 class="section-title">Недавние релизы</h2>
+                <p class="section-subtitle">Обновляется автоматически с Яндекс Музыки — слева новее, справа старее</p>
+                <div class="releases-grid" data-releases="recent"></div>
+                <p class="text-center"><a href="music.html" class="btn btn-secondary">Вся дискография →</a></p>
             </div>
         </section>
 
@@ -104,5 +100,6 @@
 
     <script src="js/main.js"></script>
     <script src="js/carousel.js"></script>
+    <script src="js/releases.js"></script>
 </body>
 </html>

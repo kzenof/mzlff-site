@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Музыка MZLFF — альбомы, синглы и релизы на Яндекс Музыке">
+    <meta name="description" content="Музыка MZLFF — альбомы, синглы и релизы">
     <title>Музыка — MZLFF</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -31,19 +31,39 @@
         <section class="section-block">
             <div class="container">
                 <h1 class="section-title">Музыка</h1>
-                <p class="section-subtitle">Альбомы и синглы mzlff — актуальный список с Яндекс Музыки, от новых к старым</p>
+                <p class="section-subtitle">Популярные треки</p>
 
-                <div class="yandex-widget yandex-widget--tall">
+                <div class="yandex-widget yandex-widget--compact">
                     <iframe
                         src="https://music.yandex.ru/iframe/#artist/6236891"
-                        title="Дискография MZLFF на Яндекс Музыке"
+                        title="Популярные треки MZLFF"
                         allow="autoplay; encrypted-media">
                     </iframe>
                 </div>
 
                 <p class="text-center">
-                    <a href="https://music.yandex.ru/artist/6236891" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Открыть профиль на Яндекс Музыке</a>
+                    <a href="https://music.yandex.ru/artist/6236891" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Открыть в Яндекс Музыке</a>
                 </p>
+            </div>
+        </section>
+
+        <section class="section-block alt-bg">
+            <div class="container">
+                <h2 class="section-title">Альбомы и EP</h2>
+                <p class="section-subtitle">От новых к старым — слева направо</p>
+                <div class="releases-grid" data-releases="albums"></div>
+            </div>
+        </section>
+
+        <section class="section-block">
+            <div class="container">
+                <h2 class="section-title">Синглы</h2>
+                <div class="releases-grid" data-releases="singles"></div>
+
+                <div class="releases-note">
+                    <strong>Автообновление:</strong> раз в сутки GitHub Action забирает релизы с Яндекс Музыки и обновляет сайт.
+                    Вручную ничего прописывать не нужно — бесплатно, без сервера.
+                </div>
             </div>
         </section>
 
@@ -65,5 +85,6 @@
     <button id="scrollToTop" class="scroll-top-btn" aria-label="Наверх">↑</button>
 
     <script src="js/main.js"></script>
+    <script src="js/releases.js"></script>
 </body>
 </html>

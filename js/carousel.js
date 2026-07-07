@@ -4,6 +4,8 @@
 
     const slides = carousel.querySelectorAll('.carousel-slide');
     const dotsContainer = carousel.querySelector('.carousel-dots');
+    const prevBtn = carousel.querySelector('.carousel-arrow--prev');
+    const nextBtn = carousel.querySelector('.carousel-arrow--next');
     let current = 0;
     let timer;
 
@@ -23,18 +25,36 @@
     function goTo(index) {
         slides[current].classList.remove('active');
         dots[current].classList.remove('active');
-        current = index;
+        current = (index + slides.length) % slides.length;
         slides[current].classList.add('active');
         dots[current].classList.add('active');
     }
 
     function next() {
-        goTo((current + 1) % slides.length);
+        goTo(current + 1);
+    }
+
+    function prev() {
+        goTo(current - 1);
     }
 
     function resetTimer() {
         clearInterval(timer);
         timer = setInterval(next, 5000);
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', function () {
+            prev();
+            resetTimer();
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener('click', function () {
+            next();
+            resetTimer();
+        });
     }
 
     resetTimer();
