@@ -2,6 +2,8 @@
 """Fetch mzlff releases from Yandex Music API and write data/releases.json."""
 
 import json
+import sys
+import time
 import urllib.error
 import urllib.request
 from pathlib import Path
@@ -13,7 +15,7 @@ OUTPUT = Path(__file__).resolve().parent.parent / "data" / "releases.json"
 PAGE_SIZE = 50
 
 
-def fetch_albums(page: int) -> dict:
+def fetch_albums(page):
     url = (
         f"{API_BASE}/artists/{ARTIST_ID}/direct-albums"
         f"?sort-by=year&page={page}&page-size={PAGE_SIZE}"
@@ -22,26 +24,50 @@ def fetch_albums(page: int) -> dict:
         url,
         headers={
             "Accept": "application/json",
-            "User-Agent": "mzlff-site/1.0 (fan site; github actions)",
+            "Accept-Language": "ru-RU,ru;q=0.9",
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/120.0.0.0 Safari/537.36"
+            ),
+            "Origin": "https://music.yandex.ru",
+            "Referer": "https://music.yandex.ru/",
         },
     )
-    with urllib.request.urlopen(request, timeout=30) as response:
+    with urllib.request.urlopen(request, timeout=45) as response:
         return json.load(response)
 
 
-def cover_url(cover_uri: str | None) -> str | None:
+def fetch_albums_with_retry(page, attempts=3):
+    last_error = None
+    for attempt in range(1, attempts + 1):
+        try:
+            return fetch_albums(page)
+        except urllib.error.HTTPError as error:
+            body = error.read().decode("utf-8", errors="replace")[:300]
+            last_error = f"HTTP {error.code} {error.reason}: {body}"
+            print(f"Attempt {attempt}/{attempts} failed: {last_error}", file=sys.stderr)
+        except urllib.error.URLError as error:
+            last_error = str(error.reason or error)
+            print(f"Attempt {attempt}/{attempts} failed: {last_error}", file=sys.stderr)
+        if attempt < attempts:
+            time.sleep(3 * attempt)
+    raise SystemExit(f"Yandex Music API error after {attempts} attempts: {last_error}")
+
+
+def cover_url(cover_uri):
     if not cover_uri:
         return None
     return "https://" + cover_uri.replace("%%", "400x400")
 
 
-def release_type(album: dict) -> str:
+def release_type(album):
     if album.get("type") == "single":
         return "single"
     return "album"
 
 
-def featuring(album: dict) -> str | None:
+def featuring(album):
     names = [
         artist["name"]
         for artist in album.get("artists", [])
@@ -51,10 +77,11 @@ def featuring(album: dict) -> str | None:
     return ", ".join(names) if names else None
 
 
-def map_album(album: dict) -> dict:
+def map_album(album):
+    release_date = album.get("releaseDate") or "0000-01-01"
     item = {
         "title": album.get("title", "Без названия"),
-        "year": album.get("year") or int(album.get("releaseDate", "0000")[:4]),
+        "year": album.get("year") or int(release_date[:4]),
         "type": release_type(album),
         "cover": cover_url(album.get("coverUri")),
         "link": f"https://music.yandex.ru/album/{album['id']}",
@@ -66,12 +93,12 @@ def map_album(album: dict) -> dict:
     return item
 
 
-def load_all_releases() -> list[dict]:
-    releases: list[dict] = []
+def load_all_releases():
+    releases = []
     page = 0
 
     while True:
-        payload = fetch_albums(page)
+        payload = fetch_albums_with_retry(page)
         albums = payload.get("result", {}).get("albums", [])
         if not albums:
             break
@@ -88,11 +115,11 @@ def load_all_releases() -> list[dict]:
     return releases
 
 
-def main() -> None:
-    try:
-        releases = load_all_releases()
-    except urllib.error.URLError as error:
-        raise SystemExit(f"Yandex Music API error: {error}") from error
+def main():
+    print(f"Python {sys.version}")
+    print(f"Output: {OUTPUT}")
+
+    releases = load_all_releases()
 
     if not releases:
         raise SystemExit("No releases returned from Yandex Music API")
