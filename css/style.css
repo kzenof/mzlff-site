@@ -1385,6 +1385,14 @@ body.mail-modal-open {
     margin-bottom: 0;
 }
 
+.mail-modal__ps {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px dashed var(--border-soft);
+    color: var(--text-muted);
+    font-style: italic;
+}
+
 /* Responsive */
 @media (max-width: 900px) {
     .hero-grid {
