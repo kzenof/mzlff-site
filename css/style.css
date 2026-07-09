@@ -17,6 +17,11 @@
     --header-bg: rgba(11, 26, 34, 0.92);
     --footer-bg: rgba(8, 18, 24, 0.95);
     --body-gradient-mid: #0d2228;
+    --section-alt-bg: rgba(18, 40, 48, 0.55);
+    --quote-bg: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(110, 181, 217, 0.08));
+    --banner-bg: rgba(110, 181, 217, 0.1);
+    --btn-secondary-text: var(--accent-mint);
+    --btn-secondary-border: var(--accent-teal);
     --radius: 14px;
     --header-height: 72px;
     --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -27,22 +32,33 @@
 }
 
 [data-theme="light"] {
-    --bg-deep: #eef6f8;
-    --bg-surface: #e2eef2;
+    --bg-deep: #e8f2f5;
+    --bg-surface: #dce9ee;
     --bg-card: #ffffff;
-    --bg-soft: #d8e8ec;
-    --accent-teal: #2a9d96;
-    --accent-blue: #4a90b8;
-    --accent-mint: #3d8f7a;
-    --accent-glow: rgba(42, 157, 150, 0.2);
-    --text-primary: #0b1a22;
-    --text-muted: #5a7a86;
-    --text-soft: #2d4a54;
-    --border-soft: rgba(74, 144, 184, 0.28);
-    --shadow: 0 12px 40px rgba(11, 26, 34, 0.1);
-    --header-bg: rgba(238, 246, 248, 0.95);
-    --footer-bg: rgba(226, 238, 242, 0.98);
-    --body-gradient-mid: #e2eef2;
+    --bg-soft: #cfdde3;
+    --accent-teal: #1a7a73;
+    --accent-blue: #2d6f96;
+    --accent-mint: #156760;
+    --accent-glow: rgba(26, 122, 115, 0.22);
+    --text-primary: #0a1620;
+    --text-muted: #3a5560;
+    --text-soft: #1e3844;
+    --border-soft: rgba(45, 111, 150, 0.35);
+    --shadow: 0 12px 40px rgba(11, 26, 34, 0.12);
+    --header-bg: rgba(255, 255, 255, 0.96);
+    --footer-bg: rgba(232, 242, 245, 0.98);
+    --body-gradient-mid: #dce9ee;
+    --section-alt-bg: #ffffff;
+    --quote-bg: #ffffff;
+    --banner-bg: #f4fafb;
+    --btn-secondary-text: #156760;
+    --btn-secondary-border: #1a7a73;
+}
+
+[data-theme="light"] body::before {
+    background:
+        radial-gradient(circle at 15% 20%, rgba(42, 157, 150, 0.12), transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(74, 144, 184, 0.1), transparent 40%);
 }
 
 * {
@@ -314,7 +330,7 @@ button:focus-visible {
 .section-block:nth-child(4) { animation-delay: 0.26s; }
 
 .section-block.alt-bg {
-    background: rgba(18, 40, 48, 0.55);
+    background: var(--section-alt-bg);
     border-top: 1px solid var(--border-soft);
     border-bottom: 1px solid var(--border-soft);
 }
@@ -529,13 +545,22 @@ button:focus-visible {
 
 .btn-secondary {
     background: transparent;
-    color: var(--accent-mint);
-    border: 2px solid var(--accent-teal);
+    color: var(--btn-secondary-text);
+    border: 2px solid var(--btn-secondary-border);
 }
 
 .btn-secondary:hover {
     background: rgba(78, 205, 196, 0.12);
-    border-color: var(--accent-mint);
+    border-color: var(--accent-teal);
+    color: var(--btn-secondary-text);
+}
+
+[data-theme="light"] .btn-secondary {
+    background: #ffffff;
+}
+
+[data-theme="light"] .btn-secondary:hover {
+    background: rgba(26, 122, 115, 0.08);
 }
 
 .btn:hover {
@@ -554,7 +579,7 @@ button:focus-visible {
     margin: 0 auto;
     padding: 40px 48px;
     text-align: center;
-    background: linear-gradient(135deg, rgba(78, 205, 196, 0.1), rgba(110, 181, 217, 0.08));
+    background: var(--quote-bg);
     border: 1px solid var(--border-soft);
     border-radius: var(--radius);
     position: relative;
@@ -597,7 +622,7 @@ button:focus-visible {
 }
 
 .quote-author strong {
-    color: var(--accent-mint);
+    color: var(--accent-teal);
 }
 
 .quote-alias {
@@ -771,11 +796,11 @@ button:focus-visible {
     max-width: 760px;
     margin: 0 auto;
     padding: 28px 32px;
-    background: rgba(110, 181, 217, 0.1);
+    background: var(--banner-bg);
     border: 1px solid var(--border-soft);
     border-left: 4px solid var(--accent-blue);
     border-radius: var(--radius);
-    color: var(--text-soft);
+    color: var(--text-primary);
     transition:
         transform var(--transition-med),
         box-shadow var(--transition-med),
@@ -790,18 +815,28 @@ button:focus-visible {
     box-shadow: -4px 8px 28px rgba(110, 181, 217, 0.15);
 }
 
+[data-theme="light"] .alter-ego-banner:hover {
+    background: #eef8f9;
+    border-color: rgba(45, 111, 150, 0.45);
+    box-shadow: -4px 8px 28px rgba(45, 111, 150, 0.12);
+}
+
 .alter-ego-label {
     display: inline-block;
     margin-bottom: 12px;
     padding: 4px 12px;
     border-radius: 999px;
     background: rgba(78, 205, 196, 0.15);
-    color: var(--accent-mint);
+    color: var(--accent-teal);
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 0.04em;
     text-transform: uppercase;
     transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+[data-theme="light"] .alter-ego-label {
+    background: rgba(26, 122, 115, 0.12);
 }
 
 .alter-ego-banner:hover .alter-ego-label {
