@@ -67,7 +67,8 @@
         if (!containers.length || !data || !data.releases) return;
 
         const sorted = data.releases.slice().sort(function (a, b) {
-            return b.year - a.year;
+            if (b.year !== a.year) return b.year - a.year;
+            return (b.yandexId || 0) - (a.yandexId || 0);
         });
 
         containers.forEach(function (container) {
@@ -75,7 +76,7 @@
             let list = sorted;
 
             if (mode === 'recent') {
-                list = sorted.slice(0, 6);
+                list = sorted.slice(0, 8);
             } else if (mode === 'all') {
                 list = sorted;
             } else if (mode === 'albums') {
