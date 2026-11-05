@@ -4,9 +4,34 @@
   "artistId": "6236891",
   "displayName": "MZLFF",
   "yandexUrl": "https://music.yandex.ru/artist/6236891",
-  "updatedAutomatically": true,
-  "updatedAt": "2026-07-07T12:54:05Z",
+  "updatedAutomatically": false,
+  "updatedAt": "2026-11-05T12:18:00Z",
   "releases": [
+    {
+      "title": "комедия наблюдений",
+      "year": 2026,
+      "type": "single",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/12/22/27/12222772-0c86-d156-3185-1873ebd1b602/cover.png/400x400bb.jpg",
+      "link": "https://music.yandex.ru/album/44550829",
+      "yandexId": 44550829
+    },
+    {
+      "title": "ATM 4 prod. by spbwaves",
+      "year": 2026,
+      "type": "single",
+      "cover": "https://avatars.yandex.net/get-music-content/21694580/ceea8527.a.43756211-1/400x400",
+      "link": "https://music.yandex.ru/album/43756211",
+      "yandexId": 43756211,
+      "featuring": "пазнякс, Слава КПСС, BOOKER, CMH"
+    },
+    {
+      "title": "лучшее позади",
+      "year": 2026,
+      "type": "single",
+      "cover": "https://avatars.yandex.net/get-music-content/20608190/fdb69a08.a.43265756-1/400x400",
+      "link": "https://music.yandex.ru/album/43265756",
+      "yandexId": 43265756
+    },
     {
       "title": "потерянный мир",
       "year": 2026,
