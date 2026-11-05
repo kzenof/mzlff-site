@@ -81,7 +81,7 @@ function Get-EnglishLabel {
         "https://vk.com/mzlff"                        = "VK Group"
         "https://vk.com/mazilaweek"                   = "VK Page"
         "https://mzlff.tours/"                        = "Tour"
-        "https://vsrap.shop/brands/mzlff/"            = "Merch"
+        "https://closefans.store/collection/mzlff"    = "Merch"
         "https://music.yandex.ru/artist/25098870"     = "Ilyukha Rep - Yandex Music"
     }
 
